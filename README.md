@@ -1,20 +1,12 @@
-Here’s the updated `README.md` file, tailored specifically to match your folder structure (as shown in the image), with a concise description for each file.
-
----
-
-```markdown
 # NTWIST Frontend Assignment
 
 ## 🧾 Project Description
 
-This project is a multi-page mini web application built using **HTML, CSS, and Vanilla JavaScript**, created as part of the NTWIST Software Test. It demonstrates core frontend development skills, including semantic HTML, responsive layouts, DOM manipulation, and form validation.
-
----
+This project is a multi-page mini web application built using **HTML, CSS, and Vanilla JavaScript**, created as part of the NTWIST Software Test. It showcases core frontend development skills, including semantic HTML, responsive design, DOM manipulation, and form validation.
 
 ## 📁 Folder Structure
 
 ```
-
 NTWIST-Software-Test/
 ├── assets/
 │   ├── css/
@@ -29,84 +21,121 @@ NTWIST-Software-Test/
 ├── index.html           # Page 1: Responsive form with validation and timer
 ├── sort.html            # Page 2: Sortable list viewer
 └── README.md            # Project documentation
-
-````
-
----
+```
 
 ## ✅ Features Implemented
 
 ### 📄 `index.html` – Responsive Form with Validation
-- **Fields**: Name, Email, and Message with HTML5 validation (`required`, `type`, `pattern`)
-- **Time Tracking**: Tracks duration from first focus to submit
-- **Confirmation**: Displays a success message and resets the form on submit
-- **Styling**: Uses `form.css` with a fixed-width sidebar layout
-- **JavaScript**: `form.js` handles logic and DOM manipulation
+- **Form Fields**: 
+  - Name (required)
+  - Email (required, validated)
+  - Message (required)
+- **Advanced Validation**:
+  - HTML5 built-in validation
+  - Custom pattern matching
+  - Client-side error handling
+- **Time Tracking**:
+  - Measures user interaction duration
+  - Captures time from first focus to form submission
+- **User Experience**:
+  - Instant feedback on form submission
+  - Clear success message
+  - Automatic form reset
+- **Responsive Design**:
+  - Mobile-friendly layout
+  - Fixed-width sidebar
+  - Consistent styling across devices
 
 ### 📄 `sort.html` – Sortable List Viewer
-- **Static List**: Displays a list of hardcoded names
-- **Sorting**: JavaScript-based sorting (no page reload)
-- **Styling**: Uses `sort.css` with a sidebar layout
-- **JavaScript**: `sort.js` for sort functionality
+- **Name List**:
+  - Predefined list of names
+  - Dynamic sorting functionality
+- **Sorting Mechanism**:
+  - Alphabetical order
+  - Client-side sorting (no page reload)
+- **Interactive UI**:
+  - Clean, intuitive interface
+  - Sidebar layout
+  - Smooth sorting transition
 
-### 📄 `faq.html` – FAQ Accordion (No JS)
-- **Accordion**: Fully functional using only HTML and CSS
-- **Approach**: `<details>` tag for collapsible sections
-- **Styling**: Defined in `faq.css`
+### 📄 `faq.html` – FAQ Accordion (No JavaScript)
+- **Accordion Design**:
+  - Fully functional using HTML and CSS
+  - Utilizes `<details>` and `<summary>` tags
+- **Styling Highlights**:
+  - Custom CSS for accordion interactions
+  - Smooth expand/collapse animations
+  - Accessible design
 
----
+## ⭐ Bonus Features
 
-## ⭐ Bonus Feature (If implemented)
-- **Star Rating Widget**: Clickable 1–5 star rating system
-- **Technologies**: HTML, CSS, JavaScript (no external libraries)
-
----
+### Star Rating Widget
+- **Functionality**:
+  - Interactive 1-5 star rating system
+  - Vanilla JavaScript implementation
+- **Features**:
+  - Hover and click state management
+  - Visual feedback
+  - No external libraries used
 
 ## 💡 Technical Highlights
 
-- **Responsive Design**: Mobile-friendly using Flexbox and CSS Grid
-- **Layout**: No layout shift on hover/focus; uses fixed sidebar where required
-- **Accessibility**: Semantic HTML elements used for clarity and structure
-- **No Libraries**: 100% Vanilla JS, HTML, and CSS
+- **Pure Frontend Stack**:
+  - 100% Vanilla JavaScript
+  - Semantic HTML5
+  - Modern CSS techniques
+- **Responsive Design**:
+  - Flexbox and CSS Grid
+  - Mobile-first approach
+  - No layout shifts
+- **Performance Optimization**:
+  - Minimal external dependencies
+  - Efficient DOM manipulation
+- **Accessibility**:
+  - Semantic HTML elements
+  - WCAG considerations
+  - Clear, readable interface
 
----
+## 🚀 Quick Start
 
-## 🚀 How to Run Locally
-
+### Local Setup
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/ntwist-frontend-assignment.git
-````
+   ```
 
-2. Navigate to the folder:
-
+2. Navigate to the project directory:
    ```bash
    cd ntwist-frontend-assignment
    ```
 
-3. Open the desired HTML file in your browser:
+3. Open project files:
+   - `index.html`: Form page
+   - `sort.html`: Sortable list
+   - `faq.html`: Accordion demonstration
 
-   * `index.html` for the form
-   * `sort.html` for sortable list
-   * `faq.html` for the accordion
+### Browser Compatibility
+- Modern browsers supported
+- Tested on:
+  - Chrome
+  - Firefox
+  - Safari
+  - Edge
 
----
+## 🔧 Development Approach
 
-## 🔧 Git Usage
+- **Version Control**:
+  - Descriptive commit messages
+  - Feature-based branching strategy
+- **Code Organization**:
+  - Modular file structure
+  - Separate concerns (HTML, CSS, JS)
+  - Clean, readable code
 
-* Descriptive commit messages
-* Organized folder structure for CSS and JS assets
-* Separate files per feature for clarity and modularity
+## 📫 Contact & Support
 
----
+**Project Maintainer**: [Your Name]
+- Email: [your.email@example.com]
+- GitHub: [Your GitHub Profile]
 
-## 📫 Contact
-
-For any queries or clarifications, feel free to reach out via email.
-
-```
-
----
-
-Would you like help adding the timer logic or the star rating widget too?
-```
+Feel free to open issues or submit pull requests for improvements or bug fixes.
