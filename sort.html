@@ -12,48 +12,25 @@
         <h1>NTWIST Frontend Assignment</h1>
         <p>Submissions Viewer</p>
     </header>
-    <nav>
-        <a href="index.html">Contact Form</a>
-        <a href="sort.html" class="active">Submissions</a>
-        <a href="faq.html">FAQ</a>
-    </nav>
+
     <main>
         <div class="container layout-with-sidebar">
             <aside class="sidebar">
-                <div class="sidebar-content">
-                    <h2>Submissions Controls</h2>
-                    <p>View and manage your form submissions with these tools.</p>
-                   
-                    <div class="control-buttons">
-                        <button id="sort-button" class="btn">Sort by Name</button>
-                        <button id="shuffle-button" class="btn btn-secondary">Sort by Date</button>
-                        <button id="reset-button" class="btn btn-outline">Clear All</button>
-                    </div>
-                   
-                    <div class="list-info">
-                        <h3>Submissions Stats</h3>
-                        <p>Total Entries: <span id="total-count">0</span></p>
-                        <p>Status: <span id="sort-status">Unsorted</span></p>
-                        <div id="filter-controls" class="filter-controls">
-                            <label for="filter-rating">Filter by rating:</label>
-                            <select id="filter-rating" class="filter-select">
-                                <option value="all">All Ratings</option>
-                                <option value="5">5 Stars</option>
-                                <option value="4">4 Stars</option>
-                                <option value="3">3 Stars</option>
-                                <option value="2">2 Stars</option>
-                                <option value="1">1 Star</option>
-                                <option value="0">Not Rated</option>
-                            </select>
-                        </div>
-                    </div>
+                <nav class="sidebar-nav" aria-label="Site Navigation">
+                    <a href="index.html">Contact Form</a>
+                    <a href="sort.html" class="active">Submissions</a>
+                    <a href="faq.html">FAQ</a>
+                </nav>
+
+                <div class="control-buttons">
+                    <button id="sort-button" class="btn">Sort by Name</button>
+                    <button id="shuffle-button" class="btn btn-secondary">Sort by Date</button>
+                    <button id="reset-button" class="btn btn-outline">Clear All</button>
                 </div>
             </aside>
+
             <section class="main-content">
                 <div class="card">
-                    <h2>Contact Form Submissions</h2>
-                    <p>View all submissions from your contact form. Sort by name or date, and use the filter to find specific entries.</p>
-                   
                     <div class="search-container">
                         <input type="text" id="search-input" class="search-input" placeholder="Search submissions..." aria-label="Search submissions">
                         <button id="search-button" class="btn search-btn">Search</button>
@@ -64,7 +41,7 @@
                             <!-- List will be populated by JavaScript -->
                         </ul>
                     </div>
-                    
+                   
                     <div id="pagination-controls" class="pagination-controls">
                         <button id="prev-page" class="btn btn-outline page-btn" disabled>Previous</button>
                         <span id="page-indicator">Page 1 of 1</span>
@@ -74,9 +51,8 @@
             </section>
         </div>
     </main>
-    <footer>
-        <p>&copy; 2025 NTWIST Frontend Assignment</p>
-    </footer>
+
+
     <script src="assets/js/sort.js"></script>
 </body>
 </html>
