@@ -1,0 +1,158 @@
+/* Form layout styles */
+.layout-with-sidebar {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+}
+
+.sidebar {
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 8px;
+  height: min-content;
+  position: sticky;
+  top: 20px;
+}
+
+.sidebar-content {
+  padding: 1.5rem;
+}
+
+.sidebar h2 {
+  margin-bottom: 1rem;
+  color: var(--light-color);
+}
+
+.sidebar p {
+  margin-bottom: 1.5rem;
+  color: #bdc3c7;
+}
+
+.sidebar-info {
+  margin-top: 2rem;
+}
+
+.info-item {
+  margin-bottom: 1.5rem;
+}
+
+.info-item h3 {
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+.timer-display {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+input:focus, textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+input:invalid, textarea:invalid {
+  border-color: var(--error-color);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  min-height: 1.25rem;
+}
+
+/* Star Rating Widget */
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 2rem;
+  color: #ddd;
+  cursor: pointer;
+  width: auto;
+  margin: 0 0.25rem 0.5rem 0;
+}
+
+.star-rating label:before {
+  content: "★";
+}
+
+.star-rating input:checked ~ label {
+  color: #ffb400;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #ffb400;
+}
+
+/* Confirmation message */
+.confirmation-message {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--light-color);
+  border-radius: 8px;
+  border-left: 5px solid var(--success-color);
+}
+
+.confirmation-message h3 {
+  color: var(--success-color);
+  margin-bottom: 1rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .layout-with-sidebar {
+    grid-template-columns: 1fr;
+  }
+  
+  .sidebar {
+    position: static;
+    margin-bottom: 2rem;
+  }
+  
+  .sidebar-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .star-rating label {
+    font-size: 1.5rem;
+  }
+}
