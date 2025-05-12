@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTWIST - Sortable List</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/sort.css">
+</head>
+<body>
+    <header>
+        <h1>NTWIST Frontend Assignment</h1>
+        <p>Sortable List Viewer</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Contact Form</a>
+        <a href="sort.html" class="active">Sortable List</a>
+        <a href="faq.html">FAQ</a>
+    </nav>
+
+    <main>
+        <div class="container layout-with-sidebar">
+            <aside class="sidebar">
+                <div class="sidebar-content">
+                    <h2>List Controls</h2>
+                    <p>Use the buttons below to sort and manage the list of names.</p>
+                    
+                    <div class="control-buttons">
+                        <button id="sort-button" class="btn">Sort Alphabetically</button>
+                        <button id="shuffle-button" class="btn btn-secondary">Shuffle List</button>
+                        <button id="reset-button" class="btn btn-outline">Reset to Original</button>
+                    </div>
+                    
+                    <div class="list-info">
+                        <h3>List Statistics</h3>
+                        <p>Total Names: <span id="total-count">0</span></p>
+                        <p>Sorted Status: <span id="sort-status">Unsorted</span></p>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="main-content">
+                <div class="card">
+                    <h2>Famous Scientists</h2>
+                    <p>A collection of notable scientists throughout history. Click the sort button to arrange them alphabetically.</p>
+                    
+                    <div class="list-container">
+                        <ul id="name-list" class="name-list">
+                            <!-- List will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 NTWIST Frontend Assignment</p>
+    </footer>
+
+    <script src="assets/js/sort.js"></script>
+</body>
+</html>
