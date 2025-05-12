@@ -1,0 +1,186 @@
+/* FAQ page styles */
+.faq-section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-intro {
+  margin-bottom: 2rem;
+  color: var(--dark-color);
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.faq-group {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+}
+
+.faq-group h3 {
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--light-color);
+  padding-bottom: 0.75rem;
+}
+
+/* Method 1: Using <details> and <summary> */
+.faq-item {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 0.5rem;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.faq-question {
+  padding: 1rem 0;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  list-style: none;
+  color: var(--dark-color);
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+details[open] .faq-question::after {
+  content: '−';
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 0 1.5rem 0;
+  color: #666;
+}
+
+.faq-answer p, .faq-answer ul, .faq-answer ol {
+  margin-bottom: 1rem;
+}
+
+.faq-answer ul, .faq-answer ol {
+  padding-left: 1.5rem;
+}
+
+/* Method 2: Using checkbox hack */
+.faq-item-checkbox {
+  position: relative;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 0.5rem;
+}
+
+.faq-item-checkbox:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.faq-toggle {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.faq-question-checkbox {
+  display: block;
+  padding: 1rem 2rem 1rem 0;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  color: var(--dark-color);
+}
+
+.faq-question-checkbox::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 1rem;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.faq-toggle:checked + .faq-question-checkbox::after {
+  content: '−';
+  transform: rotate(180deg);
+}
+
+.faq-answer-checkbox {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  padding: 0 1rem 0 0;
+  color: #666;
+}
+
+.faq-toggle:checked ~ .faq-answer-checkbox {
+  max-height: 1000px;
+  padding-bottom: 1.5rem;
+}
+
+.faq-answer-checkbox p, 
+.faq-answer-checkbox ul, 
+.faq-answer-checkbox ol {
+  margin-bottom: 1rem;
+}
+
+.faq-answer-checkbox ul, 
+.faq-answer-checkbox ol {
+  padding-left: 1.5rem;
+}
+
+/* Focus states for accessibility */
+.faq-question:focus,
+.faq-toggle:focus + .faq-question-checkbox {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Animation for the answers */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+details[open] .faq-answer {
+  animation: slideDown 0.3s ease forwards;
+}
+
+.faq-toggle:checked ~ .faq-answer-checkbox {
+  animation: slideDown 0.3s ease forwards;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .faq-group {
+    padding: 1rem;
+  }
+  
+  .faq-question,
+  .faq-question-checkbox {
+    font-size: 0.95rem;
+  }
+  
+  .faq-answer,
+  .faq-answer-checkbox {
+    font-size: 0.9rem;
+  }
+}
