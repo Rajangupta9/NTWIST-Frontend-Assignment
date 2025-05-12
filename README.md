@@ -135,6 +135,6 @@ NTWIST-Software-Test/
 ## 📫 Contact & Support
 
 **Project Maintainer**: Rajan Gupta
-- Email: rajang797.com
+- Email: rajang797@gmail.com
 
 Feel free to open issues or submit pull requests for improvements or bug fixes.
