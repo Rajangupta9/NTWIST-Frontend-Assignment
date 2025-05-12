@@ -1,80 +1,87 @@
-/* Form layout styles */
+/* Layout */
+
 .layout-with-sidebar {
   display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 2rem;
+  grid-template-columns: 1fr 2.5fr;
+  gap: 1rem;
 }
 
+@media (max-width: 768px) {
+  .layout-with-sidebar {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sidebar */
 .sidebar {
-  background-color: var(--secondary-color);
+  background: var(--secondary-color);
   color: white;
-  border-radius: 8px;
-  height: min-content;
+  border-radius: 6px;
   position: sticky;
-  top: 20px;
-}
-
-.sidebar-content {
-  padding: 1.5rem;
+  top: 16px;
+  height: min-content;
+  padding: 1rem;
+  font-size: 0.875rem;
 }
 
 .sidebar h2 {
-  margin-bottom: 1rem;
   color: var(--light-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
 }
 
 .sidebar p {
-  margin-bottom: 1.5rem;
   color: #bdc3c7;
+  margin-bottom: 1rem;
 }
 
 .sidebar-info {
-  margin-top: 2rem;
-}
-
-.info-item {
-  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .info-item h3 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--primary-color);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .timer-display {
-  margin-top: 2rem;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.2);
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   text-align: center;
-  font-weight: bold;
 }
 
-/* Form styles */
+/* Form */
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   font-weight: 600;
+  font-size: 0.9rem;
 }
 
 input, textarea {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ddd;
+  padding: 0.5rem 0.6rem;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
   border-radius: 4px;
   font-family: inherit;
-  font-size: 1rem;
   transition: var(--transition);
 }
 
 input:focus, textarea:focus {
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
 }
 
 input:invalid, textarea:invalid {
@@ -83,12 +90,12 @@ input:invalid, textarea:invalid {
 
 .error-message {
   color: var(--error-color);
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
-  min-height: 1.25rem;
+  font-size: 0.75rem;
+  margin-top: 0.2rem;
+  min-height: 1rem;
 }
 
-/* Star Rating Widget */
+/* Star Rating */
 .star-rating {
   display: flex;
   flex-direction: row-reverse;
@@ -100,59 +107,52 @@ input:invalid, textarea:invalid {
 }
 
 .star-rating label {
-  font-size: 2rem;
-  color: #ddd;
+  font-size: 1.5rem;
+  color: #ccc;
   cursor: pointer;
-  width: auto;
-  margin: 0 0.25rem 0.5rem 0;
+  margin: 0 0.2rem 0.3rem 0;
 }
 
-.star-rating label:before {
+.star-rating label::before {
   content: "★";
 }
 
-.star-rating input:checked ~ label {
-  color: #ffb400;
-}
-
+.star-rating input:checked ~ label,
 .star-rating label:hover,
 .star-rating label:hover ~ label {
   color: #ffb400;
 }
 
-/* Confirmation message */
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .star-rating label {
+    font-size: 1.2rem;
+  }
+}
+
+/* Confirmation */
 .confirmation-message {
   display: none;
+  padding: 1rem;
+  font-size: 0.9rem;
   text-align: center;
-  padding: 2rem;
-  background-color: var(--light-color);
-  border-radius: 8px;
-  border-left: 5px solid var(--success-color);
+  background: var(--light-color);
+  border-radius: 6px;
+  border-left: 4px solid var(--success-color);
 }
 
 .confirmation-message h3 {
   color: var(--success-color);
-  margin-bottom: 1rem;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .layout-with-sidebar {
-    grid-template-columns: 1fr;
-  }
-  
-  .sidebar {
-    position: static;
-    margin-bottom: 2rem;
-  }
-  
-  .sidebar-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-  }
-  
-  .star-rating label {
-    font-size: 1.5rem;
-  }
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
 }

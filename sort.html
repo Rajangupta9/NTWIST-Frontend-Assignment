@@ -3,62 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NTWIST - Sortable List</title>
+    <title>NTWIST - Submissions Viewer</title>
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/sort.css">
 </head>
 <body>
     <header>
         <h1>NTWIST Frontend Assignment</h1>
-        <p>Sortable List Viewer</p>
+        <p>Submissions Viewer</p>
     </header>
-
     <nav>
         <a href="index.html">Contact Form</a>
-        <a href="sort.html" class="active">Sortable List</a>
+        <a href="sort.html" class="active">Submissions</a>
         <a href="faq.html">FAQ</a>
     </nav>
-
     <main>
         <div class="container layout-with-sidebar">
             <aside class="sidebar">
                 <div class="sidebar-content">
-                    <h2>List Controls</h2>
-                    <p>Use the buttons below to sort and manage the list of names.</p>
-                    
+                    <h2>Submissions Controls</h2>
+                    <p>View and manage your form submissions with these tools.</p>
+                   
                     <div class="control-buttons">
-                        <button id="sort-button" class="btn">Sort Alphabetically</button>
-                        <button id="shuffle-button" class="btn btn-secondary">Shuffle List</button>
-                        <button id="reset-button" class="btn btn-outline">Reset to Original</button>
+                        <button id="sort-button" class="btn">Sort by Name</button>
+                        <button id="shuffle-button" class="btn btn-secondary">Sort by Date</button>
+                        <button id="reset-button" class="btn btn-outline">Clear All</button>
                     </div>
-                    
+                   
                     <div class="list-info">
-                        <h3>List Statistics</h3>
-                        <p>Total Names: <span id="total-count">0</span></p>
-                        <p>Sorted Status: <span id="sort-status">Unsorted</span></p>
+                        <h3>Submissions Stats</h3>
+                        <p>Total Entries: <span id="total-count">0</span></p>
+                        <p>Status: <span id="sort-status">Unsorted</span></p>
+                        <div id="filter-controls" class="filter-controls">
+                            <label for="filter-rating">Filter by rating:</label>
+                            <select id="filter-rating" class="filter-select">
+                                <option value="all">All Ratings</option>
+                                <option value="5">5 Stars</option>
+                                <option value="4">4 Stars</option>
+                                <option value="3">3 Stars</option>
+                                <option value="2">2 Stars</option>
+                                <option value="1">1 Star</option>
+                                <option value="0">Not Rated</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </aside>
-
             <section class="main-content">
                 <div class="card">
-                    <h2>Famous Scientists</h2>
-                    <p>A collection of notable scientists throughout history. Click the sort button to arrange them alphabetically.</p>
-                    
+                    <h2>Contact Form Submissions</h2>
+                    <p>View all submissions from your contact form. Sort by name or date, and use the filter to find specific entries.</p>
+                   
+                    <div class="search-container">
+                        <input type="text" id="search-input" class="search-input" placeholder="Search submissions..." aria-label="Search submissions">
+                        <button id="search-button" class="btn search-btn">Search</button>
+                    </div>
+                   
                     <div class="list-container">
                         <ul id="name-list" class="name-list">
                             <!-- List will be populated by JavaScript -->
                         </ul>
                     </div>
+                    
+                    <div id="pagination-controls" class="pagination-controls">
+                        <button id="prev-page" class="btn btn-outline page-btn" disabled>Previous</button>
+                        <span id="page-indicator">Page 1 of 1</span>
+                        <button id="next-page" class="btn btn-outline page-btn" disabled>Next</button>
+                    </div>
                 </div>
             </section>
         </div>
     </main>
-
     <footer>
         <p>&copy; 2025 NTWIST Frontend Assignment</p>
     </footer>
-
     <script src="assets/js/sort.js"></script>
 </body>
 </html>

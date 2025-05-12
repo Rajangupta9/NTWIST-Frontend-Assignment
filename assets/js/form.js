@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let timerInterval = null;
   let elapsedTime = 0;
   
+  // Load previous submissions from localStorage
+  let formSubmissions = JSON.parse(localStorage.getItem('contactFormSubmissions')) || [];
+  
   // Start timer on first focus
   const formInputs = [nameInput, emailInput, messageInput];
   formInputs.forEach(input => {
@@ -102,6 +105,48 @@ document.addEventListener('DOMContentLoaded', () => {
   emailInput.addEventListener('input', validateEmail);
   messageInput.addEventListener('input', validateMessage);
   
+  // Save form data to localStorage
+  function saveToLocalStorage(formData) {
+    // Add timestamp to the data
+    formData.submittedAt = new Date().toISOString();
+    
+    // Add to existing submissions
+    formSubmissions.push(formData);
+    
+    // Save to localStorage
+    localStorage.setItem('contactFormSubmissions', JSON.stringify(formSubmissions));
+    
+    // Log the saved data
+    console.log('Data saved to localStorage:', formData);
+    console.log('All submissions:', formSubmissions);
+  }
+  
+  // Reset form and UI
+  function resetForm() {
+    // Reset form fields
+    contactForm.reset();
+    
+    // Reset validation error messages
+    nameError.textContent = '';
+    emailError.textContent = '';
+    messageError.textContent = '';
+    
+    // Reset star rating
+    const starInputs = document.querySelectorAll('input[name="rating"]');
+    starInputs.forEach(input => input.checked = false);
+    
+    // Reset timer
+    clearInterval(timerInterval);
+    elapsedTime = 0;
+    timerDisplay.textContent = '00:00:00';
+    startTime = null;
+    formFocused = false;
+    
+    // Hide confirmation and show form
+    confirmationMessage.style.display = 'none';
+    contactForm.style.display = 'block';
+  }
+  
   // Form submission handler
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -116,29 +161,46 @@ document.addEventListener('DOMContentLoaded', () => {
       // Stop the timer
       clearInterval(timerInterval);
       
+      // Capture form data
+      const formData = {
+        name: nameInput.value.trim(),
+        email: emailInput.value.trim(),
+        message: messageInput.value.trim(),
+        rating: document.querySelector('input[name="rating"]:checked')?.value || 'Not rated',
+        timeToComplete: formatTime(elapsedTime),
+        elapsedSeconds: elapsedTime
+      };
+      
+      // Save to localStorage
+      saveToLocalStorage(formData);
+      
       // Display submission time in the confirmation message
-      completionTime.textContent = formatTime(elapsedTime);
+      completionTime.textContent = formData.timeToComplete;
       
       // Hide form and show confirmation
       contactForm.style.display = 'none';
       confirmationMessage.style.display = 'block';
       
-      // Reset form for potential reuse
-      setTimeout(() => {
-        contactForm.reset();
-        // Reset star rating
-        const starInputs = document.querySelectorAll('input[name="rating"]');
-        starInputs.forEach(input => input.checked = false);
-      }, 100);
-      
       // Log form data
-      console.log({
-        name: nameInput.value.trim(),
-        email: emailInput.value.trim(),
-        message: messageInput.value.trim(),
-        rating: document.querySelector('input[name="rating"]:checked')?.value || 'Not rated',
-        timeToComplete: formatTime(elapsedTime)
-      });
+      console.log('Form submitted:', formData);
+      
+      // Auto-refresh form after 5 seconds
+      setTimeout(resetForm, 3000);
     }
   });
+  
+  // Function to retrieve submissions from localStorage
+  function getSubmissions() {
+    return JSON.parse(localStorage.getItem('contactFormSubmissions')) || [];
+  }
+  
+  // Expose utility functions to window for potential use by other scripts
+  window.contactFormUtils = {
+    getSubmissions,
+    clearSubmissions: () => {
+      localStorage.removeItem('contactFormSubmissions');
+      formSubmissions = [];
+      console.log('All submissions cleared from localStorage');
+    }
+  };
 });
