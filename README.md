@@ -134,8 +134,7 @@ NTWIST-Software-Test/
 
 ## 📫 Contact & Support
 
-**Project Maintainer**: [Your Name]
-- Email: [your.email@example.com]
-- GitHub: [Your GitHub Profile]
+**Project Maintainer**: Rajan Gupta
+- Email: rajang797.com
 
 Feel free to open issues or submit pull requests for improvements or bug fixes.
