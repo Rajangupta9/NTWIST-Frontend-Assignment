@@ -432,6 +432,7 @@
   border-top: 1px solid #eee;
 }
 
+
 /* Responsive */
 @media (max-width: 768px) {
   .layout-with-sidebar {
