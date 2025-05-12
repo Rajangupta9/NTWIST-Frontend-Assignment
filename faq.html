@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTWIST - FAQ Accordion</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/faq.css">
+</head>
+<body>
+    <header>
+        <h1>NTWIST Frontend Assignment</h1>
+        <p>FAQ Accordion (No JavaScript)</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Contact Form</a>
+        <a href="sort.html">Sortable List</a>
+        <a href="faq.html" class="active">FAQ</a>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <p class="faq-intro">Find answers to common questions about our services and products. This accordion is built using only HTML and CSS without any JavaScript.</p>
+                
+                <div class="faq-container">
+                    <!-- Method 1: Using <details> and <summary> -->
+                    <div class="faq-group">
+                        <h3>Using &lt;details&gt; and &lt;summary&gt; HTML5 Elements</h3>
+                        
+                        <details class="faq-item">
+                            <summary class="faq-question">What is responsive web design?</summary>
+                            <div class="faq-answer">
+                                <p>Responsive web design is an approach to web design that makes web pages render well on a variety of devices and window or screen sizes. It uses HTML and CSS to automatically resize, hide, shrink, or enlarge a website to make it look good on all devices (desktops, tablets, and phones).</p>
+                                <p>Key components include flexible grids, flexible images, and media queries in CSS.</p>
+                            </div>
+                        </details>
+                        
+                        <details class="faq-item">
+                            <summary class="faq-question">What are the differences between HTML and HTML5?</summary>
+                            <div class="faq-answer">
+                                <p>HTML5 introduced several new features over HTML:</p>
+                                <ul>
+                                    <li>Semantic elements like &lt;header&gt;, &lt;footer&gt;, &lt;article&gt;, &lt;section&gt;, &lt;nav&gt;</li>
+                                    <li>New form input types (date, email, time, etc.)</li>
+                                    <li>Graphics elements: &lt;canvas&gt; and &lt;svg&gt;</li>
+                                    <li>Multimedia elements: &lt;audio&gt; and &lt;video&gt;</li>
+                                    <li>Better storage options with localStorage and sessionStorage</li>
+                                </ul>
+                            </div>
+                        </details>
+                        
+                        <details class="faq-item">
+                            <summary class="faq-question">What is the difference between CSS Grid and Flexbox?</summary>
+                            <div class="faq-answer">
+                                <p>CSS Grid and Flexbox are both layout models in CSS but serve different purposes:</p>
+                                <p><strong>CSS Grid</strong> is designed for two-dimensional layouts (rows AND columns). It's ideal for page layouts and complex grid-based interfaces.</p>
+                                <p><strong>Flexbox</strong> is designed for one-dimensional layouts (either rows OR columns). It's perfect for components, navigation bars, and smaller-scale layouts.</p>
+                                <p>They can be used together - Grid for the overall page layout and Flexbox for the components within that layout.</p>
+                            </div>
+                        </details>
+                    </div>
+                    
+                    <!-- Method 2: Using checkbox hack -->
+                    <div class="faq-group">
+                        <h3>Using CSS-only Checkbox Hack</h3>
+                        
+                        <div class="faq-item-checkbox">
+                            <input type="checkbox" id="faq1" class="faq-toggle">
+                            <label for="faq1" class="faq-question-checkbox">What are event bubbling and event capturing?</label>
+                            <div class="faq-answer-checkbox">
+                                <p>Event bubbling and capturing are two ways of event propagation in the HTML DOM:</p>
+                                <p><strong>Event Bubbling:</strong> When an event occurs on an element, it first runs the handlers on it, then on its parent, then all the way up. The event "bubbles up" from the innermost element to the outermost one.</p>
+                                <p><strong>Event Capturing:</strong> It's the opposite of bubbling. The event is first captured by the outermost element and propagates to the target element.</p>
+                                <p>Most browsers use bubbling by default. Capturing can be enabled by setting the third parameter of addEventListener to true.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item-checkbox">
+                            <input type="checkbox" id="faq2" class="faq-toggle">
+                            <label for="faq2" class="faq-question-checkbox">How does browser rendering work?</label>
+                            <div class="faq-answer-checkbox">
+                                <p>Browser rendering involves several steps:</p>
+                                <ol>
+                                    <li><strong>DOM Construction:</strong> Parse HTML to create the Document Object Model</li>
+                                    <li><strong>CSSOM Construction:</strong> Parse CSS to create the CSS Object Model</li>
+                                    <li><strong>Render Tree Construction:</strong> Combine DOM and CSSOM</li>
+                                    <li><strong>Layout:</strong> Calculate the size and position of each element</li>
+                                    <li><strong>Paint:</strong> Fill in pixels with colors, images, etc.</li>
+                                    <li><strong>Compositing:</strong> Draw layers in the correct order</li>
+                                </ol>
+                                <p>Understanding this process helps optimize website performance.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item-checkbox">
+                            <input type="checkbox" id="faq3" class="faq-toggle">
+                            <label for="faq3" class="faq-question-checkbox">What is the virtual DOM and how does it work?</label>
+                            <div class="faq-answer-checkbox">
+                                <p>The Virtual DOM is a programming concept where a virtual representation of the UI is kept in memory and synced with the "real" DOM. This process is called reconciliation.</p>
+                                <p>When state changes in applications like React:</p>
+                                <ol>
+                                    <li>A new virtual DOM is created representing the updated UI</li>
+                                    <li>The new virtual DOM is compared with the previous one (diffing)</li>
+                                    <li>Only the differences are updated in the real DOM</li>
+                                </ol>
+                                <p>This approach minimizes direct DOM manipulation and improves performance, especially in complex web applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 NTWIST Frontend Assignment</p>
+    </footer>
+</body>
+</html>
